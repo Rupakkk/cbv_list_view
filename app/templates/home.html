@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>ListView</title>
+</head>
+<body>
+    <h1 class="text-center alert alert-info">List of Students</h1>
+    <div class="container row">
+        <div class="col-sm-12 text-center">
+        <table class="table table-hover ">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Roll</th>
+                    <th scope="col">Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in student_list%}
+                    <tr>
+                        <th scope="row">{{student.id}}</th>
+                        <td>{{student.name}}</td>
+                        <td>{{student.roll}}</td>
+                        <td>{{student.course}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div> 
+    </div>  
+    <br>
+    <div class="container row">
+        <div class="col-sm-12 text-center">
+        <table class="table table-hover ">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Roll</th>
+                    <th scope="col">Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in fresher%}
+                    <tr>
+                        <th scope="row">{{student.id}}</th>
+                        <td>{{student.name}}</td>
+                        <td>{{student.roll}}</td>
+                        <td>{{student.course}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div> 
+    </div>  
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script> 
+</body>
+</html>
